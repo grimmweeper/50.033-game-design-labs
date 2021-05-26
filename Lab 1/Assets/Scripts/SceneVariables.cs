@@ -9,7 +9,6 @@ public class SceneVariables : MonoBehaviour
     
     void Awake() {
         if (Instance == null) {
-            // scoreSheet += "HIGHSCORE\n";
             DontDestroyOnLoad(gameObject);
             Instance = this;
         } 
