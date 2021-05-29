@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Restart
+  - Mario
+  - Ground
+  - Enemy
+  - Obstacles
+  - QuestionBox
+  - MushroomSpawn
+  - Platform
+  - Pipe
+  - GroundLimit
   layers:
   - Default
   - TransparentFX
@@ -11,15 +21,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Mario
+  - Ground
+  - Platform
+  - MushroomSpawn
+  - QuestionBox
+  - Obstacles
+  - Pipe
+  - GroundLimit
+  - SceneryFront
   - 
   - 
   - 
@@ -38,6 +48,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: FrontScenery
+    uniqueID: 3727000511
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MushroomSpawn
+    uniqueID: 3366763213
+    locked: 0
+  - name: Mario
+    uniqueID: 3266664589
     locked: 0
