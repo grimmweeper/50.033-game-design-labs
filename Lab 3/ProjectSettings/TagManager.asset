@@ -19,17 +19,17 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Mario
+  - Obstacles
+  - QuestionBox
+  - BG1
+  - BG2
+  - BG3
+  - BG4
+  - BG5
+  - BG6
+  - BG7
+  - BG8
   - 
   - 
   - 
@@ -48,6 +48,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1845551237
+    locked: 0
+  - name: FrontScenery
+    uniqueID: 626164535
+    locked: 0
+  - name: SpawnMushroom
+    uniqueID: 2629444897
     locked: 0
   - name: Player
     uniqueID: 2360672101

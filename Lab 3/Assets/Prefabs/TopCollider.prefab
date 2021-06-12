@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7263444213694893111}
   - component: {fileID: 7263444213694893109}
   - component: {fileID: 7263444213694893108}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: TopCollider
   m_TagString: QuestionBox
   m_Icon: {fileID: 0}
