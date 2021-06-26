@@ -29,12 +29,14 @@ public class MenuController : MonoBehaviour
     [SerializeField] private void StartButtonClicked()
     {
         foreach (Transform eachChild in transform)
-        {   
-            Debug.Log("Child found. Name: " + eachChild.name);
-            // disable them
-            eachChild.gameObject.SetActive(false);
-            Time.timeScale = 1.0f;
-            
+        {
+            if (eachChild.name != "ScoreText" && eachChild.name != "Powerups")
+            {
+                Debug.Log("Child found. Name: " + eachChild.name);
+                // disable them
+                eachChild.gameObject.SetActive(false);
+                Time.timeScale = 1.0f;
+            }
         }
     }
 

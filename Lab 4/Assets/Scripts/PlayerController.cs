@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float maxSpeed = 10;
-    [SerializeField] private float upSpeed = 30;
+    public float speed;
+    public float maxSpeed = 10;
+    public float upSpeed = 30;
 
     private Rigidbody2D marioBody;
     private bool onGroundState = true;
@@ -13,8 +14,16 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
 
-    private  Animator marioAnimator;
-    private AudioSource marioAudio;
+    private Animator marioAnimator;
+    // private AudioSource marioAudio;
+    // private AudioSource marioDieAudio;
+
+    public AudioClip marioJumpAudioClip;
+    public AudioClip marioDieAudioClip;
+    
+
+    private GameObject cameraManager;
+
 
 
     // Start is called before the first frame update
@@ -25,16 +34,23 @@ public class PlayerController : MonoBehaviour
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponent<SpriteRenderer>();
         marioAnimator = GetComponent<Animator>();
-        marioAudio = GetComponent<AudioSource>();
 
+        GameManager.OnPlayerDeath  +=  PlayerDiesSequence;
+
+        cameraManager = GameObject.Find("Main Camera");
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("z")){
+            CentralManager.centralManagerInstance.consumePowerup(KeyCode.Z,this.gameObject);
+        }
 
-
+        if (Input.GetKeyDown("x")){
+            CentralManager.centralManagerInstance.consumePowerup(KeyCode.X,this.gameObject);
+        }
     }
 
   // FixedUpdate may be called once per frame. See documentation for details.
@@ -101,7 +117,36 @@ public class PlayerController : MonoBehaviour
     }
 
     void PlayJumpSound(){
-	    marioAudio.PlayOneShot(marioAudio.clip);
+        GetComponent<AudioSource>().PlayOneShot(marioJumpAudioClip);
+    }
+
+    void  PlayerDiesSequence(){
+        // Mario dies
+        Debug.Log("Mario dies");
+        // do whatever you want here, animate etc
+        StartCoroutine(dieAnimation());
+        this.gameObject.transform.GetComponent<BoxCollider2D>().enabled = false;
+
+        cameraManager.GetComponent<CameraController>().stopBackgroundSound();
+        PlayDieSound();
+
+
+    }
+
+    IEnumerator dieAnimation(){
+		for (int i =  0; i  < 2; i  ++){
+
+			this.transform.position  =  new  Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+			yield  return  null;
+		}
+		// this.gameObject.SetActive(false);
+		Debug.Log("Enemy returned to pool");
+        
+		yield  break;
+	}
+
+    void PlayDieSound() {
+        GetComponent<AudioSource>().PlayOneShot(marioDieAudioClip);
     }
 
 

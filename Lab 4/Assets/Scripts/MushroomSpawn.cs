@@ -10,6 +10,7 @@ public class MushroomSpawn : MonoBehaviour
     private bool isMoving = true;
     private int xDirection = 1;
     private Rigidbody2D mushroomBody;
+    // private bool collected = false;
     
     
     // Start is called before the first frame update
@@ -39,13 +40,30 @@ public class MushroomSpawn : MonoBehaviour
 
         if (col.gameObject.CompareTag("Mario")) {
             isMoving = false;
+            // collected = true;
+            StartCoroutine(consumeSequence());
+            Debug.Log("consume sequence ends");
+            
         }
     }
 
-    void OnBecameInvisible(){
-        Debug.Log("MUSHIE DESTROYED!");
-        Destroy(gameObject);	
-    }
+    IEnumerator consumeSequence(){
+		Debug.Log("consume starts");
+
+		float scaleUp = 0.8f;
+        float scaleDown = -0.5f;
+
+        this.transform.localScale = new Vector3(this.transform.localScale.x + scaleUp, this.transform.localScale.y + scaleUp, this.transform.localScale.z);
+        this.transform.localScale = new Vector3(this.transform.localScale.x + scaleDown, this.transform.localScale.y + scaleDown, this.transform.localScale.z);
+        yield return null;
+        this.transform.localScale = new Vector3(0, 0, 0);
+        
+		Debug.Log("consume ends");
+		// this.gameObject.SetActive(false);
+
+		yield  break;
+	}
+
 
     void MoveMushroom() {
         velocityVector = new Vector2(velocity * xDirection, mushroomBody.velocity.y);

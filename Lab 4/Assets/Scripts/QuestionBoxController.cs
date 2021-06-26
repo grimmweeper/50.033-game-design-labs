@@ -30,7 +30,8 @@ public class QuestionBoxController : MonoBehaviour
             // ensure that we move this object sufficiently 
             rigidBody.AddForce(new  Vector2(0, rigidBody.mass*20), ForceMode2D.Impulse);
             // spawn mushroom
-            Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+            GameObject spawnMushroom = Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+            spawnMushroom.SetActive(true);
             // begin check to disable object's spring and rigidbody
             StartCoroutine(DisableHittable());
             Debug.Log("MARIO HIT QUESTION BOX");

@@ -7,11 +7,13 @@ public class BreakBrick : MonoBehaviour
 
     public GameObject prefab;    
     private bool broken = false;
+    private AudioSource brickAudio;
+    public GameObject coinPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        brickAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class BreakBrick : MonoBehaviour
     void  OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.CompareTag("Mario") && !broken) {
             broken  =  true;
+            PlayBrickBreakSound();
             // assume we have 5 debris per box
             for (int x = 0; x<5; x++){
                 Instantiate(prefab, transform.position, Quaternion.identity);
@@ -30,6 +33,12 @@ public class BreakBrick : MonoBehaviour
             gameObject.transform.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.transform.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.transform.GetChild(0).GetComponent<EdgeCollider2D>().enabled = false;
+
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
 	    }
+    }
+
+    void PlayBrickBreakSound() {
+        brickAudio.PlayOneShot(brickAudio.clip);
     }
 }

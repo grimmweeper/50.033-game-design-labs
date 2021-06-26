@@ -1,4 +1,4 @@
-# 50.033 Foundations of Game Design Lab 3
+# 50.033 Foundations of Game Design Lab 4
 
 This project was developed as part of our **50.033 Foundations of Game Design** module in **SUTD**. Any assets used were not for any commericial purposes.
 ## Description
