@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3494113868405361872}
   - component: {fileID: 8385693008671776979}
   - component: {fileID: 7875261938614942647}
-  - component: {fileID: -5069647780805881410}
+  - component: {fileID: -5395987630904448827}
+  - component: {fileID: 9101046433063174299}
   m_Layer: 7
   m_Name: GombaEnemy
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5069647780805881410
+--- !u!114 &-5395987630904448827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +143,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 2660322487551277992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f8a0c87f14a2945b8e951db1a5eea5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9051af3fd6bb1094998ac20c7039218f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlayerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: aec9ecb38da560649ab13c2a8dd5a88d, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 360f8c972ac31ca49b172b28ffa96017, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gameConstants: {fileID: 11400000, guid: 66ba511d81369c345a957c42c34a74e1, type: 2}
+--- !u!114 &9101046433063174299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660322487551277992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724443206ded14045927919757c8b02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: aec9ecb38da560649ab13c2a8dd5a88d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5395987630904448827}
+        m_TargetAssemblyTypeName: EnemyControllerEV, Assembly-CSharp
+        m_MethodName: PlayerDeathResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -1,12 +1,17 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+
+public class PlayerControllerEV : MonoBehaviour
 {
-    public float speed;
-    public float maxSpeed = 10;
-    public float upSpeed = 30;
+    private float force;
+    public IntVariable upSpeed;
+    public IntVariable maxSpeed;
+    public GameConstants gameConstants;
+	  
+	// other components and interal state
+
+    private float speed = 130.0f;
 
     private Rigidbody2D marioBody;
     private bool onGroundState = true;
@@ -22,9 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject cameraManager;
 
-
-
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
         // Set to be 30 FPS
@@ -36,6 +39,10 @@ public class PlayerController : MonoBehaviour
         GameManager.OnPlayerDeath  +=  PlayerDiesSequence;
 
         cameraManager = GameObject.Find("Main Camera");
+
+        upSpeed.SetValue(gameConstants.playerMaxJumpSpeed);
+        maxSpeed.SetValue(gameConstants.playerMaxSpeed);
+        force = gameConstants.playerDefaultForce;
         
     }
 
@@ -81,7 +88,7 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         if (Mathf.Abs(moveHorizontal) > 0){
             Vector2 movement = new Vector2(moveHorizontal, 0);
-            if (marioBody.velocity.magnitude < maxSpeed)
+            if (marioBody.velocity.magnitude < maxSpeed.Value)
                 marioBody.AddForce(movement * speed);
         } else {
             // stop horizontal movement
@@ -89,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("space") && onGroundState){
-            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+            marioBody.AddForce(Vector2.up * upSpeed.Value, ForceMode2D.Impulse);
             onGroundState = false;
             marioAnimator.SetBool("onGround", onGroundState);
             PlayJumpSound();
@@ -118,7 +125,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(marioJumpAudioClip);
     }
 
-    void  PlayerDiesSequence(){
+    public void  PlayerDiesSequence(){
         // Mario dies
         Debug.Log("Mario dies");
         // do whatever you want here, animate etc
@@ -146,6 +153,4 @@ public class PlayerController : MonoBehaviour
     void PlayDieSound() {
         GetComponent<AudioSource>().PlayOneShot(marioDieAudioClip);
     }
-
-
 }

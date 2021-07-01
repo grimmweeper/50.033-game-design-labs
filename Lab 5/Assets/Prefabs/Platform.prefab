@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 191211624168334878}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,9 +40,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191211624168334878}
     m_Modifications:
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 626164535
+      objectReference: {fileID: 0}
     - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_Name
       value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6384733589985075142, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_RootOrder
@@ -102,9 +114,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191211624168334878}
     m_Modifications:
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 626164535
+      objectReference: {fileID: 0}
     - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_Name
       value: Brick (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6384733589985075142, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_RootOrder
@@ -164,9 +188,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191211624168334878}
     m_Modifications:
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185255132486294335, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 626164535
+      objectReference: {fileID: 0}
     - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_Name
       value: Brick (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362053002103486493, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6384733589985075142, guid: 2c6d47e3082ad1c4d845651a25ee8b45, type: 3}
       propertyPath: m_RootOrder

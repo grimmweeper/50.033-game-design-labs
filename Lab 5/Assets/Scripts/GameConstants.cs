@@ -36,5 +36,13 @@ public class GameConstants : ScriptableObject {
     
     // for testing
     public  int testValue;
+
+    // Mario basic starting values
+    public int playerMaxSpeed = 5;
+    public int playerMaxJumpSpeed = 30;
+    public int playerDefaultForce = 150;
+
+    // Ground distance for spawn manager
+    public  float groundDistance =  -3.8f;
 }
 

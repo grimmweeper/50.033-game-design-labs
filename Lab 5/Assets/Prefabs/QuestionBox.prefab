@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6606076831751948259}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: QuestionBox
   m_TagString: QuestionBox
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 6606076832280514899}
   springJoint: {fileID: 6606076832280514897}
-  consummablePrefab: {fileID: 1178262344599707933, guid: c5b8d4803b0543e4b9bd001dbf0fa03c, type: 3}
+  consummablePrefab: {fileID: 4012232146869197866, guid: 7a7c05de51095864b88b60dacc7f38a2, type: 3}
   spriteRenderer: {fileID: 6606076832280514900}
   usedQuestionBox: {fileID: 21300054, guid: 855dc7396df3c4e49ac4d21234eac5e1, type: 3}
 --- !u!1001 &4567089723719374198
@@ -56,6 +56,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6606076831751948259}
     m_Modifications:
+    - target: {fileID: 7263444213694893108, guid: 6472992018474894e92abc188d3568fe, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6122563
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263444213694893108, guid: 6472992018474894e92abc188d3568fe, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19387186
+      objectReference: {fileID: 0}
     - target: {fileID: 7263444213694893110, guid: 6472992018474894e92abc188d3568fe, type: 3}
       propertyPath: m_Name
       value: TopCollider
@@ -126,6 +134,18 @@ PrefabInstance:
     - target: {fileID: 608707454434150817, guid: fad65f676c48cec4a99b93d7d050b37b, type: 3}
       propertyPath: m_Name
       value: EdgeDetector
+      objectReference: {fileID: 0}
+    - target: {fileID: 608707454434150817, guid: fad65f676c48cec4a99b93d7d050b37b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 608707454434150826, guid: fad65f676c48cec4a99b93d7d050b37b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 608707454434150826, guid: fad65f676c48cec4a99b93d7d050b37b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 626164535
       objectReference: {fileID: 0}
     - target: {fileID: 608707454434150830, guid: fad65f676c48cec4a99b93d7d050b37b, type: 3}
       propertyPath: m_RootOrder
